@@ -7,7 +7,7 @@ variable "aws_region" {
 variable "vpc_cidr_block" {
   description = "CIDR block for VPC"
   type        = string
-  default     = "10.0.0.0/16"
+  sensitive = true
 }
 
 variable "public_subnet_cidr_blocks" {
@@ -43,7 +43,11 @@ variable "private_subnet_cidr_blocks" {
 variable "instances_per_subnet" {
   description = "Number of EC2 instances per private subnet"
   type        = number
-  default     = 1
+}
+
+variable "protected_variable" {
+  description = "i am protected_variable"
+  sensitive = true
 }
 
 variable "instance_type" {
